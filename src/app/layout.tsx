@@ -23,37 +23,26 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body className="bg-gradient-to-b from-gray-950 via-black to-gray-950 text-gray-100 antialiased">
         {children}
-
         {/* Your exact config script */}
         <Script
           id="dify-config"
-          strategy="beforeInteractive" // ensure config exists before loader runs
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-              window.difyChatbotConfig = {
-                token: 'MihxeAdTZ2yr7xfO',
-                inputs: {
-                  // key: "VALUE"
-                },
-                systemVariables: {
-                  // user_id: '',
-                  // conversation_id: '',
-                },
-                userVariables: {
-                  // avatar_url: '',
-                  // name: '',
-                },
-              };
-            `,
+      window.difyChatbotConfig = {
+        token: 'RU0ied75kckVJ2Di',
+        inputs: {},
+        systemVariables: {},
+        userVariables: {},
+      };
+    `,
           }}
         />
 
-        {/* Your exact loader script (id matches your snippet) */}
         <Script
-          id="MihxeAdTZ2yr7xfO"
+          id="dify-loader"
           src="https://udify.app/embed.min.js"
-          strategy="afterInteractive"
-          defer
+          strategy="beforeInteractive"
         />
       </body>
     </html>
